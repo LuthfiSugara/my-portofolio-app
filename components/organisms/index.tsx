@@ -1,4 +1,4 @@
-import DropdownMenu from "./menu-dropdown";
+import DropdownMenu from "./MenuDropdown";
 
 export {
     DropdownMenu,

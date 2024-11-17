@@ -1,5 +1,5 @@
 import Image from "@/components/atoms/image";
-import Button from "./button";
+import Button from "./Button";
 
 export {
     Image,

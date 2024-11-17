@@ -1,11 +1,10 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import { DropdownMenu } from '@/components/organisms';
 
 const Index = () => {
-  const [openNavbar, setOpenBavbar] = useState<Boolean>(false);
 
   return (
     <header>
