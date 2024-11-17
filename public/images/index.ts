@@ -1,9 +1,9 @@
 import shimmerBase64 from "./shimmerBase64";
-import imageBlur from "./imageBlur.jpg";
-import imageError from "./imageError.svg";
+import ImageBlur from "./ImageBlur.jpg";
+import ImageError from "./ImageError.svg";
 
 export {
     shimmerBase64,
-    imageBlur,
-    imageError,
+    ImageBlur,
+    ImageError,
 }

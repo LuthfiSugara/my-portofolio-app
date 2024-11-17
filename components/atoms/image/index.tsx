@@ -3,7 +3,7 @@
 import Image, { ImageLoader } from 'next/image'
 import React, { memo, useEffect, useState } from 'react'
 import { ImageProps } from './image.type';
-import { imageBlur, imageError } from '@/public/images';
+import { ImageError } from '@/public/images';
 import './index.css';
 
 
@@ -15,7 +15,7 @@ const Index = memo(({src, alt, ...props}: ImageProps) => {
         if (props.fallbackSrc) {
             setImageSrc(props.fallbackSrc);
         }
-        setImageSrc(imageError);
+        setImageSrc(ImageError);
     };
 
     const handleLoad = () => {
@@ -25,7 +25,6 @@ const Index = memo(({src, alt, ...props}: ImageProps) => {
     useEffect(() => {
         setImageSrc(src);
     }, [src]);
-    console.log('src : ', src);
 
     return (
         <div className={`shimmer-wrapper`}>
