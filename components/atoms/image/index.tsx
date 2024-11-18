@@ -1,19 +1,22 @@
 'use client'
 
-import Image, { ImageLoader } from 'next/image'
+import Image, { ImageLoader, ImageProps } from 'next/image'
 import React, { memo, useEffect, useState } from 'react'
-import { ImageProps } from './image.type';
 import { ImageError } from '@/public/images';
 import './index.css';
 
+interface CustomImageProps extends ImageProps {
+    className?: string
+    fallbackSrc?: string;
+}
 
-const Index = memo(({src, alt, ...props}: ImageProps) => {
-    const [imageSrc, setImageSrc] = useState(src),
+const Index = memo(({className, fallbackSrc, ...props}: CustomImageProps) => {
+    const [imageSrc, setImageSrc] = useState(props.src),
     [isLoaded, setIsLoaded] = useState<boolean>(false);
 
     const handleError = () => {
-        if (props.fallbackSrc) {
-            setImageSrc(props.fallbackSrc);
+        if (fallbackSrc) {
+            setImageSrc(fallbackSrc);
         }
         setImageSrc(ImageError);
     };
@@ -23,15 +26,15 @@ const Index = memo(({src, alt, ...props}: ImageProps) => {
     };
 
     useEffect(() => {
-        setImageSrc(src);
-    }, [src]);
+        setImageSrc(props.src);
+    }, [props.src]);
 
     return (
         <div className={`shimmer-wrapper`}>
             {!isLoaded && <div className="shimmer"></div>}
             <Image 
                 src={imageSrc} 
-                alt={alt} 
+                alt={props.alt} 
                 loading='lazy'
                 width={props.width}
                 height={props.height}
@@ -39,8 +42,7 @@ const Index = memo(({src, alt, ...props}: ImageProps) => {
                 objectFit={props.objectFit}
                 objectPosition={props.objectPosition}
                 placeholder={props.placeholder}
-                blurDataURL={props.blurDataUrl}
-                className={`${props.className} ${isLoaded ? '' : 'image-hidden'}`}
+                className={`${className} ${isLoaded ? '' : 'image-hidden'}`}
                 onLoad={handleLoad}
                 onError={handleError}
             />

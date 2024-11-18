@@ -1,6 +1,10 @@
 import React from 'react'
 import { Header } from '..'
-import { LayoutProps } from './index.type'
+
+interface LayoutProps {
+    children: React.ReactNode;
+    className?: string;
+}
 
 const Index = ({children, className}: LayoutProps) => {
     return (

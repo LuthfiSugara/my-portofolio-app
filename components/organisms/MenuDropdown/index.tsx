@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import styles from './index.module.css';
-import { MenuDropdownProps } from './menu-dropdown.type';
+// import { MenuDropdownProps } from './menu-dropdown.type';
 import { Image } from '@/components/atoms';
 import { Close, Menu } from '@/public/icons';
+
+interface MenuDropdownProps {
+    children?: React.ReactNode;
+}
 
 const Index = ({children}: MenuDropdownProps) => {
     const [isOpen, setIsOpen] = useState(false);

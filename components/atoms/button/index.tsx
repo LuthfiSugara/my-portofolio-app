@@ -1,11 +1,15 @@
 import React from 'react'
-import { ButotnProps } from './index.type'
 
-const Index = ({children, onClick, className}: ButotnProps) => {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
+  children?: React.ReactNode;
+}
+
+const Index = ({children, className, ...props}: ButtonProps) => {
   return (
     <button
-        onClick={onClick}
-        className={className}
+      className={className}
+      {...props}
     >
         {children}
     </button>

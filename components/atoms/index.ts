@@ -1,4 +1,4 @@
-import Image from "@/components/atoms/image";
+import Image from "@/components/atoms/Image";
 import Button from "./Button";
 
 export {
