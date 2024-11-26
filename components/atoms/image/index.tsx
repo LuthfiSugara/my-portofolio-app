@@ -3,7 +3,7 @@
 import Image, { ImageLoader, ImageProps } from 'next/image'
 import React, { memo, useEffect, useState } from 'react'
 import { ImageError } from '@/public/images';
-import './index.css';
+// import './index.css';
 
 interface CustomImageProps extends ImageProps {
     className?: string
@@ -12,17 +12,18 @@ interface CustomImageProps extends ImageProps {
 
 const Index = memo(({className, fallbackSrc, ...props}: CustomImageProps) => {
     const [imageSrc, setImageSrc] = useState(props.src),
-    [isLoaded, setIsLoaded] = useState<boolean>(false);
+    [isLoading, setIsLoading] = useState<boolean>(true);
 
     const handleError = () => {
+        setImageSrc(ImageError);
         if (fallbackSrc) {
             setImageSrc(fallbackSrc);
         }
-        setImageSrc(ImageError);
+        setIsLoading(false);
     };
 
     const handleLoad = () => {
-        setIsLoaded(true);
+        setIsLoading(false);
     };
 
     useEffect(() => {
@@ -30,8 +31,13 @@ const Index = memo(({className, fallbackSrc, ...props}: CustomImageProps) => {
     }, [props.src]);
 
     return (
-        <div className={`shimmer-wrapper`}>
-            {!isLoaded && <div className="shimmer"></div>}
+        <>
+            {isLoading ? (
+                <div className="aspect-square">
+                    <div className="animate-pulse bg-gray-400 h-full w-full"></div>
+                </div>
+            ) : null}
+
             <Image 
                 src={imageSrc} 
                 alt={props.alt} 
@@ -42,11 +48,28 @@ const Index = memo(({className, fallbackSrc, ...props}: CustomImageProps) => {
                 objectFit={props.objectFit}
                 objectPosition={props.objectPosition}
                 placeholder={props.placeholder}
-                className={`${className} ${isLoaded ? '' : 'image-hidden'}`}
+                className={`${className} ${isLoading ? 'invisible' : 'visible'}`}
                 onLoad={handleLoad}
                 onError={handleError}
             />
-        </div>
+        </>
+        // <div className={`shimmer-wrapper`}>
+        //     {!isLoading && <div className="shimmer"></div>}
+        //     <Image 
+        //         src={imageSrc} 
+        //         alt={props.alt} 
+        //         loading='lazy'
+        //         width={props.width}
+        //         height={props.height}
+        //         layout={props.layout} 
+        //         objectFit={props.objectFit}
+        //         objectPosition={props.objectPosition}
+        //         placeholder={props.placeholder}
+        //         className={`${className} ${isLoading ? '' : 'image-hidden'}`}
+        //         onLoad={handleLoad}
+        //         onError={handleError}
+        //     />
+        // </div>
     )
 });
 

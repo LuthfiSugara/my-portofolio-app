@@ -9,7 +9,7 @@ const Index = () => {
   return (
     <header>
       <nav className='w-full xl:w-[1024px] flex justify-between md:justify-center items-center gap-4 mx-auto p-4'>
-        <Link href="/" className='md:hidden text-white text-2xl md:text-3xl font-bold uppercase'>Luthfi Sugara</Link>
+        <Link href="/" className='md:hidden text-white text-xl md:text-3xl font-bold uppercase'>Luthfi Sugara</Link>
         <div className="hidden md:flex flex-row justify-around gap-4 items-center border border-white p-4 rounded-xl">
           <Link href="/" className='text-white text-sm md:text-md md:text-2xl font-bold uppercase'>Luthfi Sugara</Link>
           <Link href="/" className='text-white text-sm md:text-lg font-medium'>Resume</Link>
