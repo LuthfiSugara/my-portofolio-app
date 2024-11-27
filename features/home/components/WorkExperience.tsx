@@ -1,35 +1,42 @@
 'use client'
 
-import React, { useRef, useState } from 'react'
-import styles from "../styles/workExperience.module.css";
+import React, { useState } from 'react'
+import { Collapse } from '@/components/organisms';
 
+interface WorkExperienceProps {
+    company: string;
+    position: string;
+    date_from: string;
+    date_to: string;
+    description: string;
+    technology: string[];
+    clasName: string;
+}
 
-const WorkExperience = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const contentRef = useRef<HTMLDivElement>(null);
-
-    const toggleCollapse = () => {
-        setIsOpen(!isOpen);
-    };
+const WorkExperience = ({company, position, clasName, ...props}: WorkExperienceProps) => {
+    const [isShow, setIsShow] = useState(false);
 
     return (
-        <div className={styles.container}>
-            <button onClick={toggleCollapse} className={styles.toggleButton}>
-                {isOpen ? "Collapse" : "Expand"}
-            </button>
-            <div
-                className={styles.contentWrapper}
-                style={{
-                    maxHeight: isOpen ? `${contentRef.current?.scrollHeight}px` : "10px",
-                }}
-            >
-                <div className={styles.content} ref={contentRef}>
-                    <p>
-                        This is the collapsible content. The height adjusts dynamically
-                        based on the content inside.
-                    </p>
+        <div onClick={() => setIsShow(!isShow)} className='cursor-pointer bg-[#251d53] p-4 sm:p-8 rounded-2xl'>
+            <Collapse show={isShow} startingHeight={150}>
+                <div className='space-y-4'>
+                    <p className='text-xl sm:text-2xl font-bold'>{company}</p>
+                    <div className="flex flex-wrap justify-between items-end gap-4 font-semibold">
+                        <p className='text-lg'>{position}</p>
+                        <p className='text-sm sm:text-md italic'>{props.date_from + " - " + props.date_to}</p>
+                    </div>
+                    <p className='text-sm sm:text-md text-justify'>{props.description}</p>
+                    <div className="flex flex-wrap justify-start gap-4 pt-6">
+                        {props.technology.map((tech, index) => {
+                            return (
+                                <div key={index} className='border-2 border-gray-400 py-1 px-4 rounded-full text-sm text-center'>
+                                    {tech}
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
-            </div>
+            </Collapse>
         </div>
     )
 }
