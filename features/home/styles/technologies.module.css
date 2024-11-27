@@ -1,0 +1,19 @@
+.icon {
+    animation: bounce 2s infinite ease-in-out;
+    transition: transform 0.3s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+}
+  
+.icon:hover {
+    animation-play-state: paused; /* Pause the animation */
+    transform: scale(1.2);
+}
+

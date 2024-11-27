@@ -4,6 +4,7 @@ import IntroductionLeft from "@/features/home/components/IntroductionLeft";
 import IntroductionRight from "@/features/home/components/IntroductionRight";
 import WorkExperience from "@/features/home/components/WorkExperience";
 import LangEN from "../lang/en/en.json";
+import Technologies from "@/features/home/components/Technologies";
 
 export default function Home() {
 
@@ -18,8 +19,6 @@ export default function Home() {
       {/* WorkExperience */}
       <div className="space-y-8">
         <p className="text-3xl text-center font-bold">{LangEN.home.work_experience.title}</p>
-
-        {/* <WorkExperience /> */}
         <div className="space-y-4">
           {LangEN.home.work_experience.experiences.map((experience, index) => {
             return (
@@ -37,6 +36,13 @@ export default function Home() {
             )
           })}
         </div>
+      </div>
+
+      {/* Technologies */}
+      <div className="space-y-8">
+        <p className="text-3xl text-center font-bold">Technologies</p>
+        
+        <Technologies />
       </div>
       
     </div>
