@@ -11,6 +11,7 @@ interface WorkExperienceProps {
     description: string;
     technology: string[];
     clasName: string;
+    startingHeight: number;
 }
 
 const WorkExperience = ({company, position, clasName, ...props}: WorkExperienceProps) => {
@@ -18,10 +19,10 @@ const WorkExperience = ({company, position, clasName, ...props}: WorkExperienceP
 
     return (
         <div onClick={() => setIsShow(!isShow)} className='cursor-pointer bg-[#251d53] p-4 sm:p-8 rounded-2xl'>
-            <Collapse show={isShow} startingHeight={150}>
+            <Collapse show={isShow} startingHeight={props.startingHeight}>
                 <div className='space-y-4'>
                     <p className='text-xl sm:text-2xl font-bold'>{company}</p>
-                    <div className="flex flex-wrap justify-between items-end gap-4 font-semibold">
+                    <div className="flex flex-wrap justify-between items-end gap-1 sm:gap-4 font-semibold">
                         <p className='text-lg'>{position}</p>
                         <p className='text-sm sm:text-md italic'>{props.date_from + " - " + props.date_to}</p>
                     </div>
