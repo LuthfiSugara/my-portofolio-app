@@ -27,6 +27,7 @@ import TypeORM from "./technologies/TypeORM.png";
 import Typescript from "./technologies/Typescript.png";
 import VueJS from "./technologies/VueJS.png";
 import NextJS from "./technologies/Nextjs.png";
+import Arrow from "./Arrow.png";
 
 export {
     Menu,
@@ -58,4 +59,5 @@ export {
     Typescript,
     VueJS,
     NextJS,
+    Arrow,
 }

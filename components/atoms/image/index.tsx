@@ -3,7 +3,6 @@
 import Image, { ImageLoader, ImageProps } from 'next/image'
 import React, { memo, useEffect, useState } from 'react'
 import { ImageError } from '@/public/images';
-// import './index.css';
 
 interface CustomImageProps extends ImageProps {
     className?: string

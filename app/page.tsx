@@ -5,6 +5,7 @@ import IntroductionRight from "@/features/home/components/IntroductionRight";
 import WorkExperience from "@/features/home/components/WorkExperience";
 import LangEN from "../lang/en/en.json";
 import Technologies from "@/features/home/components/Technologies";
+import MyDocumentations from "@/features/home/components/MyDocumentations";
 
 export default function Home() {
 
@@ -43,6 +44,15 @@ export default function Home() {
         <p className="text-3xl text-center font-bold">Technologies</p>
         
         <Technologies />
+      </div>
+
+
+      {/* My DOcumentations */}
+      <div className="space-y-8">
+        <p className="text-3xl text-center font-bold">My Documentations</p>
+        <div className="flex gap-8">
+          <MyDocumentations />
+        </div>
       </div>
       
     </div>
