@@ -5,17 +5,23 @@ import styles from "../styles/myDocumentations.module.css";
 import { Image } from '@/components/atoms';
 import { Arrow } from '@/public/icons';
 import { Londrina_Shadow } from "next/font/google";
+import { Lottie } from '@/components/organisms';
+import { Rocket } from '@/public/images';
 
 const londrinaShadow = Londrina_Shadow({
     weight: '400',
     subsets: ['latin'],
 });
 
+interface MyDocumentationProps {
+    number: string;
+    tech: string;
+    description: string;
+}
 
-const MyDocumentations = () => {
+const MyDocumentations = ({ number, tech, description }: MyDocumentationProps) => {
 
     return (
-        // <div className={styles.card}>
         <div className={`relative cursor-pointer w-[400px] h-[250px] ${styles.card}`}>
             <div className={`${styles.cardInner} relative w-full h-full rounded-lg`}>
                 {/* Front Side */}
@@ -26,7 +32,7 @@ const MyDocumentations = () => {
                                 className={`${styles.cardTitle} text-3xl font-bold`}
                                 style={{ fontFamily: londrinaShadow.style.fontFamily }}
                             >
-                                01
+                                {number}
                             </h3>
                             <div className={`w-8 bg-white p-2 rounded-full ${styles.icon}`}>
                                 <Image
@@ -35,15 +41,21 @@ const MyDocumentations = () => {
                                 />
                             </div>
                         </div>
-                        <h2 className="text-xl font-bold">GIT</h2>
+                        <h2 className="text-xl font-bold">{tech}</h2>
                     </div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    <p>{description}</p>
                 </div>
 
                 {/* Back Side */}
                 <div className={`${styles.cardBack} flex flex-col justify-center`}>
-                    <div className='text-2xl font-bold mx-auto'>
-                        Coming Soon 🚀
+                    <div className='flex items-center gap-2 mx-auto'>
+                        <p className='text-2xl font-bold'>Coming Soon</p>
+                        <Lottie 
+                            animationData={Rocket}
+                            loop={true}
+                            autoplay={true}
+                            className='w-12 rotate-45'
+                        />
                     </div>
                 </div>
             </div>

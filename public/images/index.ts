@@ -4,6 +4,7 @@ import ImageError from "./ImageError.svg";
 import LuthfiSugara from "./LuthfiSugara.jpg";
 import Backend from "./Backend.png";
 import Frontend from "./Frontend.png";
+import Rocket from "./lotties/Rocket.json";
 
 export {
     shimmerBase64,
@@ -12,4 +13,5 @@ export {
     LuthfiSugara,
     Backend,
     Frontend,
+    Rocket,
 }

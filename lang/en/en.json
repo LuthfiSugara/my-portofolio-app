@@ -1,5 +1,4 @@
 {
-    
     "home": {
         "work_experience": {
             "title": "Work Experience",
@@ -33,6 +32,46 @@
                     },
                     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                     "tech": ["Git", "Javascript", "PHP", "HTML5", "CSS3", "NodeJS", "ExpressJS", "Laravel", "PostgreSQL", "ReactJS", "TailwindCss", "Bootstrap"]
+                }
+            ]
+        },
+        "documentaions": {
+            "title": "My Documentations",
+            "docs": [
+                {
+                    "number": "01",
+                    "tech": "Git",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                },
+                {
+                    "number": "02",
+                    "tech": "Javascript",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                },
+                {
+                    "number": "03",
+                    "tech": "Typescript",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                },
+                {
+                    "number": "04",
+                    "tech": "PHP",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                },
+                {
+                    "number": "05",
+                    "tech": "NodeJS",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                },
+                {
+                    "number": "06",
+                    "tech": "MySQL",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                },
+                {
+                    "number": "07",
+                    "tech": "MongoDB",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
                 }
             ]
         }

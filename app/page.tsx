@@ -19,7 +19,7 @@ export default function Home() {
 
       {/* WorkExperience */}
       <div className="space-y-8">
-        <p className="text-3xl text-center font-bold">{LangEN.home.work_experience.title}</p>
+        <p className="text-2xl md:text-3xl text-center font-bold">{LangEN.home.work_experience.title}</p>
         <div className="space-y-4">
           {LangEN.home.work_experience.experiences.map((experience, index) => {
             return (
@@ -41,7 +41,7 @@ export default function Home() {
 
       {/* Technologies */}
       <div className="space-y-8">
-        <p className="text-3xl text-center font-bold">Technologies</p>
+        <p className="text-2xl md:text-3xl text-center font-bold">Technologies</p>
         
         <Technologies />
       </div>
@@ -49,9 +49,18 @@ export default function Home() {
 
       {/* My DOcumentations */}
       <div className="space-y-8">
-        <p className="text-3xl text-center font-bold">My Documentations</p>
-        <div className="flex gap-8">
-          <MyDocumentations />
+        <p className="text-2xl md:text-3xl text-center font-bold">My Documentations</p>
+        <div className="flex overflow-auto gap-4 snap-mandatory snap-x hide-scrollbar">
+          {LangEN.home.documentaions.docs.map((documentation, index) => (
+            <div className="snap-center">
+              <MyDocumentations 
+                key={index} 
+                number={documentation.number}
+                tech={documentation.tech}
+                description={documentation.description}
+              />
+            </div>
+          ))}
         </div>
       </div>
       
