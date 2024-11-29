@@ -28,6 +28,7 @@ import Typescript from "./technologies/Typescript.png";
 import VueJS from "./technologies/VueJS.png";
 import NextJS from "./technologies/Nextjs.png";
 import Arrow from "./Arrow.png";
+import Airplane from "./Airplane.png";
 
 export {
     Menu,
@@ -60,4 +61,5 @@ export {
     VueJS,
     NextJS,
     Arrow,
+    Airplane,
 }

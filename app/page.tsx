@@ -6,6 +6,7 @@ import WorkExperience from "@/features/home/components/WorkExperience";
 import LangEN from "../lang/en/en.json";
 import Technologies from "@/features/home/components/Technologies";
 import MyDocumentations from "@/features/home/components/MyDocumentations";
+import Contact from "@/features/home/components/Contact";
 
 export default function Home() {
 
@@ -47,14 +48,13 @@ export default function Home() {
       </div>
 
 
-      {/* My DOcumentations */}
+      {/* My Documentations */}
       <div className="space-y-8">
         <p className="text-2xl md:text-3xl text-center font-bold">My Documentations</p>
         <div className="flex overflow-auto gap-4 snap-mandatory snap-x hide-scrollbar">
           {LangEN.home.documentaions.docs.map((documentation, index) => (
-            <div className="snap-center">
+            <div key={index}  className="snap-center">
               <MyDocumentations 
-                key={index} 
                 number={documentation.number}
                 tech={documentation.tech}
                 description={documentation.description}
@@ -62,6 +62,13 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </div>
+
+
+      {/* Contact */}
+      <div>
+        <p className="text-2xl md:text-3xl text-center font-bold">Let's Connect</p>
+        <Contact />
       </div>
       
     </div>
