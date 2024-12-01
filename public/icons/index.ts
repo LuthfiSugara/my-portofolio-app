@@ -29,6 +29,7 @@ import VueJS from "./technologies/VueJS.png";
 import NextJS from "./technologies/Nextjs.png";
 import Arrow from "./Arrow.png";
 import Airplane from "./Airplane.png";
+import Firebase from "./technologies/Firebase.png";
 
 export {
     Menu,
@@ -62,4 +63,5 @@ export {
     NextJS,
     Arrow,
     Airplane,
+    Firebase,
 }

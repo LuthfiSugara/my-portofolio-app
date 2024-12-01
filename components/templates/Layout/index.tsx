@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from '..'
+import { Footer, Header } from '..'
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -13,6 +13,7 @@ const Index = ({children, className}: LayoutProps) => {
             <main className={className}>
                 {children}
             </main>
+            <Footer />
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image, Tooltip } from '@/components/atoms'
-import { Bootstrap, ChakraUI, Css, ExpressJS, Git, Html, Javascript, JQuery, Laravel, MongoDB, Mongoose, MySQL, NestJS, NextJS, NodeJS, PHP, PostgreSQL, ReactJS, Saas, Swagger, TailwindCss, TypeORM, Typescript, VueJS } from '@/public/icons'
+import { Bootstrap, ChakraUI, Css, ExpressJS, Firebase, Git, Html, Javascript, JQuery, Laravel, MongoDB, Mongoose, MySQL, NestJS, NextJS, NodeJS, PHP, PostgreSQL, ReactJS, Saas, Swagger, TailwindCss, TypeORM, Typescript, VueJS } from '@/public/icons'
 import styles from "../styles/technologies.module.css";
 
 const techStack = [
@@ -14,6 +14,7 @@ const techStack = [
     { icon: ReactJS, tooltip: 'React', alt: 'react' },
     { icon: NextJS, tooltip: 'NextJS', alt: 'nextjs' },
     { icon: VueJS, tooltip: 'VueJS', alt: 'vuejs' },
+    {icon: Firebase, tooltip: 'Firebase', alt: 'firebase'},
     { icon: Saas, tooltip: 'Saas', alt: 'saas' },
     { icon: TailwindCss, tooltip: 'TailwindCss', alt: 'tailwindcss' },
     { icon: Bootstrap, tooltip: 'Bootstrap', alt: 'bootstrap' },
