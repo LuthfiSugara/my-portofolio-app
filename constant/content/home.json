@@ -1,0 +1,90 @@
+{
+    "home": {
+        "hero": {
+            "hello": "Hello I'm",
+            "name": "Luthfi Sugara",
+            "description": "Full-Stack Software Developer with 6 years Structuring, Develop and Implementing interactive applications. I have focused on developing scalable and well-documented code. I enjoy working collaboratively but can also run with projects independently. Motivated to advance and expand my skill set through targeted mentorship and challenging projects."
+        },
+        "work_experience": {
+            "title": "Work Experience",
+            "experiences" : [
+                {
+                    "company": "Global Investa Capital",
+                    "position": "Software Developer",
+                    "date": {
+                        "from": "12/2021",
+                        "to": "Present"
+                    },
+                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                    "tech": ["Git", "Typescript", "Javascript", "PHP", "HTML5", "CSS3", "NodeJS", "ExpressJS", "NestJS", "Laravel", "MongoDB", "MySQL", "Mongoose", "TypeORM", "ReactJS", "NextJS", "SaaS", "TailwindCss", "Bootstrap", "ChakraUI", "Swagger", "Web3"]
+                },
+                {
+                    "company": "Bursaku.id",
+                    "position": "Software Developer",
+                    "date": {
+                        "from": "09/2020",
+                        "to": "11/2021"
+                    },
+                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                    "tech": ["Git", "Typescript", "Javascript", "PHP", "HTML5", "CSS3", "NodeJS", "ExpressJS", "Laravel", "PostgreSQL", "ReactJS", "NextJS", "TailwindCss", "Bootstrap"]
+                },
+                {
+                    "company": "Lunata Technologies",
+                    "position": "Full-Stack Developer",
+                    "date": {
+                        "from": "04/2019",
+                        "to": "08/2020"
+                    },
+                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                    "tech": ["Git", "Javascript", "PHP", "HTML5", "CSS3", "NodeJS", "ExpressJS", "Laravel", "PostgreSQL", "ReactJS", "TailwindCss", "Bootstrap"]
+                }
+            ]
+        },
+        "technologies": {
+            "title": "Technologies"
+        },
+        "documentaions": {
+            "title": "My Documentations",
+            "docs": [
+                {
+                    "number": "01",
+                    "tech": "Git",
+                    "description": "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency."
+                },
+                {
+                    "number": "02",
+                    "tech": "Javascript",
+                    "description": "JavaScript (JS) is a lightweight interpreted (or just-in-time compiled) programming language with first-class functions."
+                },
+                {
+                    "number": "03",
+                    "tech": "Typescript",
+                    "description": "TypeScript is a syntactic superset of JavaScript which adds static typing. This basically means that TypeScript adds syntax on top of JavaScript, allowing developers to add types."
+                },
+                {
+                    "number": "04",
+                    "tech": "PHP",
+                    "description": "PHP is a server scripting language, and a powerful tool for making dynamic and interactive Web pages."
+                },
+                {
+                    "number": "05",
+                    "tech": "NodeJS",
+                    "description": "Node.js is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts."
+                },
+                {
+                    "number": "06",
+                    "tech": "MySQL",
+                    "description": "MySQL is a relational database organizes data into one or more data tables in which data may be related to each other."
+                },
+                {
+                    "number": "07",
+                    "tech": "MongoDB",
+                    "description": "MongoDB is a source-available, cross-platform, document-oriented database program. Classified as a NoSQL database product, MongoDB utilizes JSON-like documents with optional schemas."
+                }
+            ]
+        },
+        "contact": {
+            "title": "Let's Connect"
+        }
+    }
+}

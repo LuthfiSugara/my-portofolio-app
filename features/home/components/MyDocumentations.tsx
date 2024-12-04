@@ -43,7 +43,7 @@ const MyDocumentations = ({ number, tech, description }: MyDocumentationProps) =
                         </div>
                         <h2 className="text-xl font-bold">{tech}</h2>
                     </div>
-                    <p>{description}</p>
+                    <p className='text-justify'>{description}</p>
                 </div>
 
                 {/* Back Side */}

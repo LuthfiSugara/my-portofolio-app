@@ -3,7 +3,7 @@
 import IntroductionLeft from "@/features/home/components/IntroductionLeft";
 import IntroductionRight from "@/features/home/components/IntroductionRight";
 import WorkExperience from "@/features/home/components/WorkExperience";
-import LangEN from "../lang/en/en.json";
+import HomeContent from "../constant/content/home.json";
 import Technologies from "@/features/home/components/Technologies";
 import MyDocumentations from "@/features/home/components/MyDocumentations";
 import Contact from "@/features/home/components/Contact";
@@ -20,9 +20,9 @@ export default function Home() {
 
       {/* WorkExperience */}
       <div className="space-y-8">
-        <p className="text-2xl md:text-3xl text-center font-bold">{LangEN.home.work_experience.title}</p>
+        <p className="text-2xl md:text-3xl text-center font-bold">{HomeContent.home.work_experience.title}</p>
         <div className="space-y-4">
-          {LangEN.home.work_experience.experiences.map((experience, index) => {
+          {HomeContent.home.work_experience.experiences.map((experience, index) => {
             return (
               <WorkExperience 
                 key={index}
@@ -52,8 +52,8 @@ export default function Home() {
       <div className="space-y-8">
         <p className="text-2xl md:text-3xl text-center font-bold">My Documentations</p>
         <div className="flex overflow-auto gap-4 snap-mandatory snap-x hide-scrollbar">
-          {LangEN.home.documentaions.docs.map((documentation, index) => (
-            <div key={index}  className="snap-center">
+          {HomeContent.home.documentaions.docs.map((documentation, index) => (
+            <div key={index} className="snap-center">
               <MyDocumentations 
                 number={documentation.number}
                 tech={documentation.tech}

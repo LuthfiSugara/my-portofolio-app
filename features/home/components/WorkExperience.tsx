@@ -26,11 +26,12 @@ const WorkExperience = ({company, position, clasName, ...props}: WorkExperienceP
                         <p className='text-lg'>{position}</p>
                         <p className='text-sm sm:text-md italic'>{props.date_from + " - " + props.date_to}</p>
                     </div>
+
                     <p className='text-sm sm:text-md text-justify'>{props.description}</p>
                     <div className="flex flex-wrap justify-start gap-4 pt-6">
                         {props.technology.map((tech, index) => {
                             return (
-                                <div key={index} className='border-2 border-gray-400 py-1 px-4 rounded-full text-sm text-center'>
+                                <div key={index} className='border-2 border-gray-400 py-1 px-4 rounded-full text-sm text-center font-medium'>
                                     {tech}
                                 </div>
                             )
