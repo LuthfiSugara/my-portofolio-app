@@ -26,7 +26,7 @@ export default function Home() {
             return (
               <WorkExperience 
                 key={index}
-                startingHeight={162}
+                startingHeight={122}
                 company={experience.company} 
                 position={experience.position} 
                 date_from={experience.date.from} 

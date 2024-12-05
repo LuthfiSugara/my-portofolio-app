@@ -15,7 +15,7 @@
                         "from": "12/2021",
                         "to": "Present"
                     },
-                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                    "description": "Build, design and maintain software application base on user stories, requirements and design specification. Focused on front-end development, providing mentorship and coaching to 3 junior front-end developer using React and NextJS. Presented software development and lifecycle reports to CTO and CEO, receiving recognition for design ideas and implementation.",
                     "tech": ["Git", "Typescript", "Javascript", "PHP", "HTML5", "CSS3", "NodeJS", "ExpressJS", "NestJS", "Laravel", "MongoDB", "MySQL", "Mongoose", "TypeORM", "ReactJS", "NextJS", "SaaS", "TailwindCss", "Bootstrap", "ChakraUI", "Swagger", "Web3"]
                 },
                 {
@@ -25,7 +25,7 @@
                         "from": "09/2020",
                         "to": "11/2021"
                     },
-                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                    "description": "Developed, tested, debugged, and documented software applications. Developed Restful API to control user functions using ExpressJS with Mysql as a persistence layer while utilizing React on the frontend. Participated in code reviews with product team, and gained feedback from senior engineers and experience in writing custom and scalable code.",
                     "tech": ["Git", "Typescript", "Javascript", "PHP", "HTML5", "CSS3", "NodeJS", "ExpressJS", "Laravel", "PostgreSQL", "ReactJS", "NextJS", "TailwindCss", "Bootstrap"]
                 },
                 {
@@ -35,7 +35,7 @@
                         "from": "04/2019",
                         "to": "08/2020"
                     },
-                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                    "description": "Built and maintained existing applications using PHP, Laravel and MySql or PostgreSql. Collaborated with cross-functional teams regarding product and design application. Analyzed and utilized application and programming documents to develop of clean, scalable and reusabled code.",
                     "tech": ["Git", "Javascript", "PHP", "HTML5", "CSS3", "NodeJS", "ExpressJS", "Laravel", "PostgreSQL", "ReactJS", "TailwindCss", "Bootstrap"]
                 }
             ]
