@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env: {
-        RESEND_API_KEY: process.env.NEXT_PUBLIC_RESEND_API_KEY
+        EMAIL: process.env.NEXT_PUBLIC_EMAIL,
+        PASSWORD: process.env.NEXT_PUBLIC_PASSWORD
     },
 };
 

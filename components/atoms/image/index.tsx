@@ -40,35 +40,11 @@ const Index = memo(({className, fallbackSrc, ...props}: CustomImageProps) => {
             <Image 
                 src={imageSrc} 
                 alt={props.alt} 
-                loading='lazy'
-                width={props.width}
-                height={props.height}
-                layout={props.layout} 
-                objectFit={props.objectFit}
-                objectPosition={props.objectPosition}
-                placeholder={props.placeholder}
                 className={`${className} ${isLoading ? 'invisible' : 'visible'}`}
                 onLoad={handleLoad}
                 onError={handleError}
             />
         </>
-        // <div className={`shimmer-wrapper`}>
-        //     {!isLoading && <div className="shimmer"></div>}
-        //     <Image 
-        //         src={imageSrc} 
-        //         alt={props.alt} 
-        //         loading='lazy'
-        //         width={props.width}
-        //         height={props.height}
-        //         layout={props.layout} 
-        //         objectFit={props.objectFit}
-        //         objectPosition={props.objectPosition}
-        //         placeholder={props.placeholder}
-        //         className={`${className} ${isLoading ? '' : 'image-hidden'}`}
-        //         onLoad={handleLoad}
-        //         onError={handleError}
-        //     />
-        // </div>
     )
 });
 

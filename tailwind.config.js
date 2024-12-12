@@ -9,6 +9,11 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('autofill', '&:-webkit-autofill');
+      addVariant('autofill-focus', '&:-webkit-autofill:focus');
+    },
+  ],
 }
 

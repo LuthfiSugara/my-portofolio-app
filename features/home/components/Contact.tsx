@@ -1,10 +1,9 @@
 'use client'
 
-import { Button, Image, Input, Textarea } from '@/components/atoms'
-import { EmailContact } from '@/components/templates'
+import { Button, Image, Input, Spinner, Textarea } from '@/components/atoms'
 import { Airplane } from '@/public/icons'
+import { sendEmail } from '@/utils/send-mail'
 import React, { useEffect, useState } from 'react'
-import { Resend } from 'resend'
 
 type Form = {
     name?: string;
@@ -13,54 +12,66 @@ type Form = {
 }
 
 const Contact = () => {
-    const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const [formContact, setFormContact] = useState({
+    const [triggerValidate, setTriggerValidate] = useState<boolean>(false),
+    [loading, setLoading] = useState<boolean>(false),
+    [formContact, setFormContact] = useState({
         name: '',
         email: '',
         message: '',
     }),
-    [errors, setErrors] = useState<Form>({});
+    [errors, setErrors] = useState<Form>({
+        name: '',
+        email: '',
+        message: '',
+    });
     
     const handleFormInput = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
         setFormContact((prevState) => ({...prevState, [name]: value}));
+        setTriggerValidate(true);
     }
 
-    useEffect(() => {
+    const handleValidation = () => {
         const newErrors: Form = {};
-
-        if(formContact.name == ''){
+        
+        if(!formContact.name.trim()){
             newErrors.name = "Name is required!";
         }
 
-        if(formContact.email == ''){
-            newErrors.email = "Name is required!";
+        if(!formContact.email.trim()){
+            newErrors.email = "Email is required!";
+        }else if(!formContact.email.match(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)){
+            newErrors.email = "Invalid email!";
         }
 
-        if(formContact.message == ''){
-            newErrors.message = "Name is required!";
+        if(!formContact.message.trim()){
+            newErrors.message = "Message is required!";
         }
 
         setErrors(newErrors);
-    }, [formContact]);
-
-
-    const handleSubmit = async() => {
-        if (Object.keys(errors).length === 0){
-            const { data, error } = await resend.emails.send({
-                from: 'luthfisugara33@gmail.com',
-                to: ['sugaraluthfi@gmail.com'],
-                subject: 'Hello world',
-                react: EmailContact(formContact.name, formContact.email, formContact.message,),
-            });
-
-            console.log('data : ', data);
-            console.log('error : ', error);
-        }
     }
 
-    
+    useEffect(() => {
+        if(triggerValidate){
+            handleValidation();
+        }
+    }, [formContact]);
+
+    const handleSubmit = async() => {
+        const isFormValid = Object.values(errors).every((error) => error === ' ');
+        setLoading(true);
+        
+        if (isFormValid && triggerValidate){
+            const result = await sendEmail(formContact);
+            console.log('send email : ', result);
+            setFormContact({name: '', email: '', message: ''});
+            setErrors({name: '', email: '', message: ''});
+        }
+
+        setLoading(false);
+        setTriggerValidate(false);
+    }
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-8">
@@ -68,7 +79,10 @@ const Contact = () => {
                 <Input 
                     name="name" 
                     value={formContact.name || ''}
-                    onChange={(e) => handleFormInput(e)}
+                    onChange={(e) => {
+                        handleFormInput(e);
+                        
+                    }}
                     placeholder="Name"
                     errorMessage={errors.name}
                     className="bg-transparent border-2 border-gray-400 rounded-md p-2 text-white" 
@@ -78,9 +92,13 @@ const Contact = () => {
                 <Input 
                     name="email" 
                     value={formContact.email || ''}
-                    onChange={(e) => handleFormInput(e)}
+                    onChange={(e) => {
+                        handleFormInput(e);
+                        
+                    }}
                     placeholder="Email"
                     errorMessage={errors.email}
+                    autoComplete='off'
                     className="bg-transparent border-2 border-gray-400 rounded-md p-2 text-white" 
                 />
             </div>
@@ -88,7 +106,10 @@ const Contact = () => {
                 <Textarea 
                     name="message" 
                     value={formContact.message || ''}
-                    onChange={(e) => handleFormInput(e)}
+                    onChange={(e) => {
+                        handleFormInput(e);
+                        
+                    }}
                     placeholder="Message"
                     errorMessage={errors.message}
                     className="h-[200px] bg-transparent border-2 border-gray-500 rounded-md text-white p-4"
@@ -100,6 +121,8 @@ const Contact = () => {
                 <Button 
                     type='button' 
                     onClick={() => handleSubmit()}
+                    isLoading={loading}
+                    spinner={<Spinner />}
                     className='flex justify-center gap-2 items-center bg-white w-full p-2 rounded-md'
                 >
                     <p className='text-black text-md font-semibold'>Send</p>

@@ -4,6 +4,7 @@ import Tooltip from "./Tooltip"
 import Label from "./Label";
 import Input from "./Input";
 import Textarea from "./Textarea";
+import Spinner from "./Spinner";
 
 export {
     Image,
@@ -12,4 +13,5 @@ export {
     Label,
     Input,
     Textarea,
+    Spinner,
 }
