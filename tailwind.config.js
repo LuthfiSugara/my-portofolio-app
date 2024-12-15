@@ -6,14 +6,25 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./features/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    'w-sm',
+    'w-md',
+    'w-lg',
+    'w-xl',
+    'w-full',
+    'h-full',
+  ],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        'sm': '320px',
+        'md': '384px',
+        'lg': '512px',
+        'xl': '1024px',
+      }
+    },
   },
   plugins: [
-    function ({ addVariant }) {
-      addVariant('autofill', '&:-webkit-autofill');
-      addVariant('autofill-focus', '&:-webkit-autofill:focus');
-    },
   ],
 }
 

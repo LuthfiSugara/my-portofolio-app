@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styles from './index.module.css';
-// import { MenuDropdownProps } from './menu-dropdown.type';
 import { Image } from '@/components/atoms';
 import { Close, Menu } from '@/public/icons';
 

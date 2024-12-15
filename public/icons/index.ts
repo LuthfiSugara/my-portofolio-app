@@ -30,6 +30,7 @@ import NextJS from "./technologies/Nextjs.png";
 import Arrow from "./Arrow.png";
 import Airplane from "./Airplane.png";
 import Firebase from "./technologies/Firebase.png";
+import Time from "./Time.svg";
 
 export {
     Menu,
@@ -64,4 +65,5 @@ export {
     Arrow,
     Airplane,
     Firebase,
+    Time,
 }

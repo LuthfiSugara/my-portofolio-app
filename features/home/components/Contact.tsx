@@ -1,6 +1,7 @@
 'use client'
 
 import { Button, Image, Input, Spinner, Textarea } from '@/components/atoms'
+import useDisclosure from '@/hooks/useDisclosure'
 import { Airplane } from '@/public/icons'
 import { sendEmail } from '@/utils/send-mail'
 import React, { useEffect, useState } from 'react'
@@ -12,6 +13,10 @@ type Form = {
 }
 
 const Contact = () => {
+
+    const {isOpen, onOpen, onClose} = useDisclosure();
+
+    console.log('isOpen : ', isOpen);
 
     const [triggerValidate, setTriggerValidate] = useState<boolean>(false),
     [loading, setLoading] = useState<boolean>(false),
@@ -120,7 +125,10 @@ const Contact = () => {
             <div className="col-span-1 md:col-span-4">
                 <Button 
                     type='button' 
-                    onClick={() => handleSubmit()}
+                    onClick={() => {
+                        handleSubmit();
+                        onOpen();
+                    }}
                     isLoading={loading}
                     spinner={<Spinner />}
                     className='flex justify-center gap-2 items-center bg-white w-full p-2 rounded-md'
