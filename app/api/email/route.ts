@@ -15,11 +15,11 @@ export async function POST(request: NextRequest){
     });
 
     const mailOptions: Mail.Options = {
-        from: email,
-        to: process.env.EMAIL,
+        from: process.env.EMAIL,
+        to: email,
         // cc: email, (uncomment this line if you want to send a copy to the sender)
-        subject: `Message from ${name}`,
-        text: message
+        subject: `Message from ${name} - ${email})`,
+        html: message
     }
 
     const sendMailPromise = () => new Promise<string>((resolve, reject) => {
@@ -34,9 +34,16 @@ export async function POST(request: NextRequest){
 
     try{
         await sendMailPromise();
-        return NextResponse.json({message: 'Email sent'});
+
+        return NextResponse.json({
+            status:'success',
+            message: 'Email sent successfully'
+        });
     }catch(err){
-        return NextResponse.json({error: err}, {status: 500});
+        return NextResponse.json({
+            status: 'error',
+            error: err
+        }, {status: 500});
     }
 
 }

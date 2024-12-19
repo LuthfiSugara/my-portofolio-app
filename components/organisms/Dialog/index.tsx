@@ -7,7 +7,7 @@ import { Time } from '@/public/icons';
 
 interface ModalProps {
     title?: string;
-    size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
+    size: 'sm' | 'md' | 'lg' | 'xl' | 'full';
     isOpen: boolean;
     onClose: () => void;
     children: React.ReactNode;

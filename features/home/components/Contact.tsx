@@ -1,9 +1,12 @@
 'use client'
 
 import { Button, Image, Input, Spinner, Textarea } from '@/components/atoms'
+import { Dialog } from '@/components/organisms'
 import useDisclosure from '@/hooks/useDisclosure'
 import { Airplane } from '@/public/icons'
-import { sendEmail } from '@/utils/send-mail'
+import { EmailSent } from '@/public/images'
+import { emailSentTemplate, sendEmail } from '@/utils/send-mail'
+import Lottie from 'lottie-react'
 import React, { useEffect, useState } from 'react'
 
 type Form = {
@@ -15,8 +18,6 @@ type Form = {
 const Contact = () => {
 
     const {isOpen, onOpen, onClose} = useDisclosure();
-
-    console.log('isOpen : ', isOpen);
 
     const [triggerValidate, setTriggerValidate] = useState<boolean>(false),
     [loading, setLoading] = useState<boolean>(false),
@@ -68,10 +69,12 @@ const Contact = () => {
         setLoading(true);
         
         if (isFormValid && triggerValidate){
+            formContact.message = emailSentTemplate(formContact.name);
             const result = await sendEmail(formContact);
             console.log('send email : ', result);
             setFormContact({name: '', email: '', message: ''});
             setErrors({name: '', email: '', message: ''});
+            onOpen();
         }
 
         setLoading(false);
@@ -127,7 +130,6 @@ const Contact = () => {
                     type='button' 
                     onClick={() => {
                         handleSubmit();
-                        onOpen();
                     }}
                     isLoading={loading}
                     spinner={<Spinner />}
@@ -139,6 +141,19 @@ const Contact = () => {
                     </div>
                 </Button>
             </div>
+
+            <Dialog isOpen={isOpen} onClose={onClose} size='md'>
+                <Lottie 
+                    animationData={EmailSent}
+                    loop={false}
+                    autoplay={true}
+                    className='w-32 mx-auto'
+                />
+                <div className='text-center mb-8 space-y-2'>
+                    <p className='text-xl font-bold'>Email sent successfully</p>
+                    <p className='text-md font-medium'>Thank you {formContact.name}, I will check your email as soon as possible.</p>
+                </div>
+            </Dialog>
         </div>
     )
 }

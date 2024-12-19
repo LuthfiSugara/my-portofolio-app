@@ -9,12 +9,12 @@ interface EmailContactProps {
 
 const Index = (name: string, email: string, message: string) => {
     return (
-        <div>
-            <p>{name}</p>
-            <p>{email}</p>
-            <p>{message}</p>
-
-        </div>
+        <html>
+            <head></head>
+            <body>
+                
+            </body>
+        </html>
     )
 }
 

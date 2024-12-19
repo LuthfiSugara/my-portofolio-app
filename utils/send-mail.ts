@@ -1,3 +1,5 @@
+import { EmailSent } from "@/lib/templates/email/EmailSent";
+import * as handlebars from "handlebars";
 
 interface formEmail {
     name: string;
@@ -20,3 +22,12 @@ export const sendEmail = async(data: formEmail) => {
         alert(err);
     });
 }
+
+export function emailSentTemplate(name: string, url?: string) {
+    const template = handlebars.compile(EmailSent);
+    const htmlBody = template({
+      name: name,
+    //   url: url,
+    });
+    return htmlBody;
+  }

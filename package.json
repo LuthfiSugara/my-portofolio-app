@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/nodemailer": "^6.4.17",
+    "handlebars": "^4.7.8",
     "lottie-react": "^2.4.0",
     "next": "14.2.16",
     "nodemailer": "^6.9.16",
