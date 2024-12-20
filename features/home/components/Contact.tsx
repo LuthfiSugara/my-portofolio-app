@@ -1,13 +1,11 @@
 'use client'
 
 import { Button, Image, Input, Spinner, Textarea } from '@/components/atoms'
-import { Dialog } from '@/components/organisms'
 import useDisclosure from '@/hooks/useDisclosure'
 import { Airplane } from '@/public/icons'
-import { EmailSent } from '@/public/images'
 import { emailSentTemplate, sendEmail } from '@/utils/send-mail'
-import Lottie from 'lottie-react'
 import React, { useEffect, useState } from 'react'
+import ContactDialog from './ContactDialog'
 
 type Form = {
     name?: string;
@@ -16,8 +14,8 @@ type Form = {
 }
 
 const Contact = () => {
-
-    const {isOpen, onOpen, onClose} = useDisclosure();
+    const {isOpen, onOpen, onClose} = useDisclosure(),
+    [status, setStatus] = useState<'success' |  'error'>('error');
 
     const [triggerValidate, setTriggerValidate] = useState<boolean>(false),
     [loading, setLoading] = useState<boolean>(false),
@@ -69,16 +67,44 @@ const Contact = () => {
         setLoading(true);
         
         if (isFormValid && triggerValidate){
-            formContact.message = emailSentTemplate(formContact.name);
-            const result = await sendEmail(formContact);
-            console.log('send email : ', result);
-            setFormContact({name: '', email: '', message: ''});
-            setErrors({name: '', email: '', message: ''});
+            const logoImage = window.location.origin + '/images/Logo.svg';
+            const d = new Date();
+
+            const dataSent = {
+                subject: 'Thank You for Reaching Out!',
+                email: formContact.email,
+                to: formContact.email,
+                name: formContact.name,
+                message: emailSentTemplate(logoImage, formContact.name, d.getFullYear())
+            }
+
+            const dataReceive = {
+                subject: `Message from ${formContact.name} - ${formContact.email}`,
+                email: formContact.email,
+                to: process.env.EMAIL as string,
+                name: formContact.name,
+                message: formContact.message,
+            }
+
+            const sender = await sendEmail(dataSent);
+            const receiver = await sendEmail(dataReceive);
+
+            if(sender.status === 'success' && receiver.status === 'success'){
+                setStatus('success');
+            }else{
+                setStatus('error');
+            }
+
             onOpen();
         }
 
         setLoading(false);
         setTriggerValidate(false);
+    }
+
+    const handleResetForm = () => {
+        setFormContact({name: '', email: '', message: ''});
+        setErrors({name: '', email: '', message: ''});
     }
 
     return (
@@ -142,18 +168,15 @@ const Contact = () => {
                 </Button>
             </div>
 
-            <Dialog isOpen={isOpen} onClose={onClose} size='md'>
-                <Lottie 
-                    animationData={EmailSent}
-                    loop={false}
-                    autoplay={true}
-                    className='w-32 mx-auto'
-                />
-                <div className='text-center mb-8 space-y-2'>
-                    <p className='text-xl font-bold'>Email sent successfully</p>
-                    <p className='text-md font-medium'>Thank you {formContact.name}, I will check your email as soon as possible.</p>
-                </div>
-            </Dialog>
+            <ContactDialog 
+                status={status}
+                isOpen={isOpen}
+                name={formContact.email}
+                onClose={() => {
+                    handleResetForm();
+                    onClose();
+                }}
+            />
         </div>
     )
 }

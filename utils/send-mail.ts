@@ -2,6 +2,8 @@ import { EmailSent } from "@/lib/templates/email/EmailSent";
 import * as handlebars from "handlebars";
 
 interface formEmail {
+    subject: string,
+    to: string;
     name: string;
     email: string;
     message: string;
@@ -10,24 +12,26 @@ interface formEmail {
 export const sendEmail = async(data: formEmail) => {
     const apiEndpoint = '/api/email';
     
-    await fetch(apiEndpoint, {
+    const result = await fetch(apiEndpoint, {
         method: 'POST',
         body: JSON.stringify(data),
     })
-    .then((res) => res.json())
-    .then((response) => {
-        alert(response.message);
+    .then((res) => {
+        return res.json();
     })
-    .catch((err) => {
-        alert(err);
+    .catch((error) => {
+        return error;
     });
+
+    return result;
 }
 
-export function emailSentTemplate(name: string, url?: string) {
+export function emailSentTemplate(logo: string, name: string, year: number) {
     const template = handlebars.compile(EmailSent);
     const htmlBody = template({
-      name: name,
-    //   url: url,
+        logo: logo,
+        name: name,
+        year: year,
     });
     return htmlBody;
   }

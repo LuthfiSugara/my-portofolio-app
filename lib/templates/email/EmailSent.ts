@@ -272,11 +272,11 @@ export const EmailSent = `
             </head>
 
             <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f1f1f1; height: 100vh;">
-                <center style="width: 100%; background-color: #f1f1f1;">
+                <center style="width: 100%; background-color: #f1f1f1; height: 100vh; display: flex; flex-direction: column; justify-content: center;">
                     <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
                     &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
                     </div>
-                    <div style="max-width: 600px; margin: 0 auto;" class="email-container">
+                    <div style="max-width: 600px; margin: auto;" class="email-container">
                         <!-- BEGIN BODY -->
                         <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
                             <tr>
@@ -285,7 +285,7 @@ export const EmailSent = `
                                         <tr>
                                             <td class="logo" style="text-align: start;">
                                                 <a href="#" style="display: flex; gap: 12px; align-items: center;">
-                                                    <img src="./images/logo-svg.svg" alt="logo" style="width: 45px; height: 35px; background-color: white; border-radius: 100%;" />
+                                                    <img src="{{logo}}" alt="logo" style="width: 45px; height: 35px; background-color: white; border-radius: 100%;" />
                                                     <p style="color: #213555; font-size: 20px; font-weight: 500;">Luthfi Sugara</p>
                                                 </a>
                                             </td>
@@ -326,18 +326,12 @@ export const EmailSent = `
                         <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
                             <tr>
                                 <td class="bg_light" style="text-align: center;">
-                                    <p>© <span id="year"></span> Luthfi Sugara. All Rights Reserved</p>
+                                    <p>© {{year}} Luthfi Sugara. All Rights Reserved</p>
                                 </td>
                             </tr>
                         </table>
                     </div>
                 </center>
             </body>
-
-            <script>
-                const d = new Date();
-                let fullYear = d.getFullYear();
-                document.getElementById("year").innerHTML = fullYear;
-            </script>
         </html>
 `
