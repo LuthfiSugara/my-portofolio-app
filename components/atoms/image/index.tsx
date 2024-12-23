@@ -32,8 +32,8 @@ const Index = memo(({className, fallbackSrc, ...props}: CustomImageProps) => {
     return (
         <>
             {isLoading ? (
-                <div className="aspect-square">
-                    <div className="animate-pulse bg-slate-100 h-full w-full"></div>
+                <div className="animate-pulse">
+                    <div className=" aspect-square bg-slate-100 h-full w-full"></div>
                 </div>
             ) : null}
 

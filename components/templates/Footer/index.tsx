@@ -20,15 +20,15 @@ const Index = () => {
                     <div className='w-full md:w-[50%] space-y-2'>
                         <p className='text-xl font-bold text-start md:text-end'>Social Media</p>
                         <div className="flex flex-wrap justify-start md:justify-end gap-2">
-                            <Link href='https://github.com/LuthfiSugara' target="_blank" className={`relative p-2 rounded-full my-auto`}>
+                            <Link href='https://github.com/LuthfiSugara' target="_blank" className={`block p-2 rounded-full my-auto`}>
                                 <div className="w-7">
                                     <Image src={Github} alt="github" />
                                 </div>
                             </Link>
 
-                            <Link href='https://www.linkedin.com/in/luthfi-sugara/' target="_blank" className={`relative p-2 rounded-full my-auto`}>
+                            <Link href='https://www.linkedin.com/in/luthfi-sugara/' target="_blank" className={`block p-2 rounded-full my-auto`}>
                                 <div className="w-6">
-                                    <Image src={Linkedin} alt="linkedin" className='' />
+                                    <Image src={Linkedin} alt="linkedin" />
                                 </div>
                             </Link>
                         </div>
