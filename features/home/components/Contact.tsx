@@ -83,7 +83,7 @@ const Contact = () => {
                 email: formContact.email,
                 to: process.env.EMAIL as string,
                 name: formContact.name,
-                message: formContact.message,
+                message: formContact.message.replace(/\r?\n/g, '<br />'),
             }
 
             const sender = await sendEmail(dataSent);
@@ -97,6 +97,8 @@ const Contact = () => {
 
             onOpen();
         }
+        
+        // console.log('message : ', formContact.message.replace(/\r?\n/g, '<br />'));
 
         setLoading(false);
         setTriggerValidate(false);
