@@ -4,19 +4,16 @@ import { Image } from '@/components/atoms';
 import { Close, Menu } from '@/public/icons';
 
 interface MenuDropdownProps {
+    isOpen: boolean;
     children?: React.ReactNode;
+    onToggle: () => void;
 }
 
-const Index = ({children}: MenuDropdownProps) => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+const Index = ({isOpen, children, onToggle}: MenuDropdownProps) => {
 
     return (
         <div className=''>
-            <button onClick={toggleMenu} className={styles.menuIcon}>
+            <button onClick={onToggle} className={styles.menuIcon}>
                 <div className="w-6">
                     <Image
                         src={isOpen ? Close : Menu}

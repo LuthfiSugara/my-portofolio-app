@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const Index = ({children, className}: LayoutProps) => {
     return (
-        <div>
+        <div className='m-0 p-0'>
             <Header />
             <main className={className}>
                 {children}

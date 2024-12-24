@@ -19,7 +19,7 @@ export default function Home() {
       </div>
 
       {/* WorkExperience */}
-      <div className="space-y-8">
+      <div className="space-y-8" id="resume">
         <p className="text-2xl md:text-3xl text-center font-bold">{HomeContent.home.work_experience.title}</p>
         <div className="space-y-4">
           {HomeContent.home.work_experience.experiences.map((experience, index) => {
@@ -49,7 +49,7 @@ export default function Home() {
 
 
       {/* My Documentations */}
-      <div className="space-y-8">
+      <div className="space-y-8" id="documentations">
         <p className="text-2xl md:text-3xl text-center font-bold">My Documentations</p>
         <div className="flex overflow-auto gap-4 snap-mandatory snap-x hide-scrollbar">
           {HomeContent.home.documentaions.docs.map((documentation, index) => (
@@ -66,7 +66,7 @@ export default function Home() {
 
 
       {/* Contact */}
-      <div>
+      <div id="contact">
         <p className="text-2xl md:text-3xl text-center font-bold">Let's Connect</p>
         <Contact />
       </div>
