@@ -1,7 +1,7 @@
 /* Menu Container */
 .menu {
     position: fixed;
-    top: 0;
+    top: 59px;
     left: 0;
     width: 100%; /* Menu width */
     height: 100%;

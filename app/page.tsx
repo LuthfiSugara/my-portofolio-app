@@ -11,7 +11,7 @@ import Contact from "@/features/home/components/Contact";
 export default function Home() {
 
   return (
-    <div className="w-[95%] max-w-[1024px] mx-auto mt-12 space-y-24 mb-10">
+    <div className="w-[95%] max-w-[1024px] mx-auto mt-20 md:mt-[200px] space-y-24 mb-10">
       {/* Hero */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-4">
         <IntroductionLeft className="order-last sm:order-first" />
