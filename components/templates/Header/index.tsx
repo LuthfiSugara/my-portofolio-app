@@ -25,7 +25,7 @@ const Index = () => {
   };
 
   return (
-    <header className='p-4 fixed top-0 left-0 right-0 z-50 bg-white' id='navbar' style={{background: isPageScrolled ? 'linear-gradient(rgb(40, 28, 115), rgb(24 3 40))' : 'transparent'}}>
+    <header className='p-4 fixed top-0 left-0 right-0 z-50 bg-white' id='navbar' style={{background: isPageScrolled ? '#0c0340' : 'transparent'}}>
       <nav className='w-full xl:w-[1024px] flex justify-between md:justify-center items-center gap-4 mx-auto'>
         <div className="hidden md:flex flex-row justify-around gap-4 items-center border border-white p-4 rounded-xl">
           <Link href="/" className='text-white text-sm md:text-md md:text-2xl font-bold uppercase'>Luthfi Sugara</Link>
@@ -34,7 +34,7 @@ const Index = () => {
           <Link href={process.env.APP_URL + '#contact'} className='text-white text-sm md:text-lg font-medium'>Contact</Link>
         </div>
         <div className="block md:hidden">
-          <Link href="/" className='text-white text-xl md:text-3xl font-bold uppercase'>Luthfi Sugara</Link>
+          <Link href="/" className='text-white text-xl sm:text-2xl md:text-3xl font-bold uppercase'>Luthfi Sugara</Link>
           <button onClick={isOpen ? onClose : onOpen} className={styles.menuIcon}>
             <div className="w-6">
               <Image

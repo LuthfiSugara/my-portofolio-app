@@ -1,6 +1,6 @@
 'use client'
 
-import Image, { ImageLoader, ImageProps } from 'next/image'
+import Image, { ImageProps } from 'next/image'
 import React, { memo, useEffect, useState } from 'react'
 import { ImageError } from '@/public/images';
 
@@ -32,8 +32,8 @@ const Index = memo(({className, fallbackSrc, ...props}: CustomImageProps) => {
     return (
         <>
             {isLoading ? (
-                <div className="animate-pulse">
-                    <div className=" aspect-square bg-slate-100 h-full w-full"></div>
+                <div className="relative animate-pulse">
+                    <div className="bg-slate-100 aspect-square h-auto w-full"></div>
                 </div>
             ) : null}
 
@@ -49,3 +49,4 @@ const Index = memo(({className, fallbackSrc, ...props}: CustomImageProps) => {
 });
 
 export default Index
+

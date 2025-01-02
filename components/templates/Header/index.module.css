@@ -6,7 +6,7 @@
     width: 100%; /* Menu width */
     height: 100%;
     /* background: linear-gradient(180deg, #3b0076, #1e0036); */
-    background: linear-gradient(180deg, #0C0340, #1e0036);
+    background-color: #0c0340; /*linear-gradient(180deg, #0C0340, #1e0036); */
     color: white;
     z-index: 10;
     transform: translateX(-100%);

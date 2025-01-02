@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import styles from "../styles/myDocumentations.module.css";
+import styles from "../styles/backflipCard.module.css";
 import { Image } from '@/components/atoms';
 import { Arrow } from '@/public/icons';
 import { Londrina_Shadow } from "next/font/google";
@@ -25,7 +25,7 @@ const MyDocumentations = ({ number, tech, description }: MyDocumentationProps) =
         <div className={`relative cursor-pointer w-[400px] h-[250px] ${styles.card}`}>
             <div className={`${styles.cardInner} relative w-full h-full rounded-lg`}>
                 {/* Front Side */}
-                <div className={`${styles.cardFront} flex flex-col justify-evenly`}>
+                <div className={`${styles.cardFront} flex flex-col justify-evenly bg-[#1c1b42]`}>
                     <div className='space-y-4'>
                         <div className='flex gap-2 justify-between'>
                             <h3 
@@ -47,7 +47,7 @@ const MyDocumentations = ({ number, tech, description }: MyDocumentationProps) =
                 </div>
 
                 {/* Back Side */}
-                <div className={`${styles.cardBack} flex flex-col justify-center`}>
+                <div className={`${styles.cardBack} flex flex-col justify-center bg-[#dcdcdc]`}>
                     <div className='flex items-center gap-2 mx-auto'>
                         <p className='text-2xl font-bold'>Coming Soon</p>
                         <Lottie 

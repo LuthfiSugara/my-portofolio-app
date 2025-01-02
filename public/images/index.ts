@@ -6,6 +6,7 @@ import Rocket from "./lotties/Rocket.json";
 import Congratulations from "./lotties/Congratulations.json";
 import EmailSent from "./lotties/EmailSent.json";
 import Logo from "./logo.svg";
+import ImageLoading from "./ImageLoading.svg";
 
 export {
     ImageBlur,
@@ -15,5 +16,6 @@ export {
     Rocket,
     Congratulations,
     EmailSent,
-    Logo
+    Logo,
+    ImageLoading,
 }

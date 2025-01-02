@@ -1,10 +1,5 @@
 .card {
-    /* position: relative;
-    width: 300px;
-    height: 180px;
-    border-radius: 15px; */
     perspective: 1000px; /* Enables 3D effect */
-    /* cursor: pointer; */
   }
   
   .card:hover .cardInner {
@@ -41,7 +36,7 @@
   }
   
   .cardFront {
-    background-color: #1c1b42;
+    /* background-color: #1c1b42; */
     color: white;
     padding: 20px;
     z-index: 2; /* Ensure it's on top initially */
@@ -49,7 +44,7 @@
   }
   
   .cardBack {
-    background-color: #dcdcdc;
+    /* background-color: #dcdcdc; */
     color: #1c1b42;
     padding: 20px;
     transform: rotateY(180deg); /* Place it behind initially */

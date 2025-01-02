@@ -10,17 +10,20 @@
   },
   "dependencies": {
     "@types/nodemailer": "^6.4.17",
+    "axios": "^1.7.9",
     "handlebars": "^4.7.8",
     "lottie-react": "^2.4.0",
     "next": "14.2.16",
     "nodemailer": "^6.9.16",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/sharp": "^0.32.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^8",
     "eslint-config-next": "14.2.16",
