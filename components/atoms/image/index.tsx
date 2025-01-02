@@ -40,7 +40,7 @@ const Index = memo(({className, fallbackSrc, ...props}: CustomImageProps) => {
             <Image 
                 src={imageSrc} 
                 alt={props.alt} 
-                className={`${className} ${isLoading ? 'invisible' : 'visible'}`}
+                className={`${className} ${isLoading ? 'invisible h-0' : 'visible'}`}
                 onLoad={handleLoad}
                 onError={handleError}
             />
