@@ -31,3 +31,5 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;
 }
+
+.target-element { scroll-margin-top: 150px; }
