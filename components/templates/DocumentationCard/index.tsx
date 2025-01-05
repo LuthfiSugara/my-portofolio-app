@@ -5,7 +5,7 @@ import styles from "./index.module.css";
 import { Image } from '@/components/atoms';
 import { Arrow } from '@/public/icons';
 import { Londrina_Shadow } from "next/font/google";
-import { Lottie } from '@/components/organisms';
+import { Lottie } from '@/components/molecules';
 import { Rocket } from '@/public/images';
 
 const londrinaShadow = Londrina_Shadow({
