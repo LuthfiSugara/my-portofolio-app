@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import styles from "./index.module.css";
+import styles from "../../../styles/backflipCard.module.css";
 import { Image } from '@/components/atoms';
 import { Arrow } from '@/public/icons';
 import { Londrina_Shadow } from "next/font/google";

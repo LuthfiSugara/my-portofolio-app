@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import cardStyles from "../styles/backflipCard.module.css";
+import cardStyles from "../../../styles/backflipCard.module.css";
 import { Image } from '@/components/atoms';
 import { Backend, Frontend } from '@/public/images';
 

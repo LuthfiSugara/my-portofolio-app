@@ -19,7 +19,7 @@ const MyDocumentations = () => {
     return (
         <div className="flex gap-4">
           <Button 
-            className="bg-[#1c1b42] rounded-l-full"
+            className="bg-[#1c1b42] rounded-l-full hidden sm:block"
             onClick={() => {
               handleScrollDocs(-400);
             }}
@@ -39,7 +39,7 @@ const MyDocumentations = () => {
             ))}
           </div>
           <Button 
-            className="bg-[#1c1b42] rounded-r-full"
+            className="bg-[#1c1b42] rounded-r-full hidden sm:block"
             onClick={() => {
               handleScrollDocs(+400);
             }}
