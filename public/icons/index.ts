@@ -31,6 +31,8 @@ import Arrow from "./Arrow.png";
 import Airplane from "./Airplane.png";
 import Firebase from "./technologies/Firebase.png";
 import Time from "./Time.svg";
+import ChevronRight from "./ChevronRight.svg";
+import ChevronLeft from "./ChevronLeft.svg";
 
 export {
     Menu,
@@ -66,4 +68,6 @@ export {
     Airplane,
     Firebase,
     Time,
+    ChevronLeft,
+    ChevronRight,
 }

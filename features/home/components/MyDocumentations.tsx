@@ -1,64 +1,53 @@
 'use client'
 
-import React from 'react'
-import styles from "../styles/backflipCard.module.css";
-import { Image } from '@/components/atoms';
-import { Arrow } from '@/public/icons';
-import { Londrina_Shadow } from "next/font/google";
-import { Lottie } from '@/components/organisms';
-import { Rocket } from '@/public/images';
+import React, { useRef } from 'react'
+import { Button, Image } from '@/components/atoms';
+import { ChevronLeft, ChevronRight } from '@/public/icons';
+import HomeContent from "../../../constant/content/home.json";
+import { DocumentationCaard } from '@/components/templates';
 
-const londrinaShadow = Londrina_Shadow({
-    weight: '400',
-    subsets: ['latin'],
-});
+const MyDocumentations = () => {
 
-interface MyDocumentationProps {
-    number: string;
-    tech: string;
-    description: string;
-}
-
-const MyDocumentations = ({ number, tech, description }: MyDocumentationProps) => {
+    const containerDocs = useRef<HTMLDivElement | null>(null);
+    
+      const handleScrollDocs = (offset: number) => {
+        if(containerDocs.current){
+          containerDocs.current.scrollLeft += offset;
+        }
+      }
 
     return (
-        <div className={`relative cursor-pointer w-[400px] h-[250px] ${styles.card}`}>
-            <div className={`${styles.cardInner} relative w-full h-full rounded-lg`}>
-                {/* Front Side */}
-                <div className={`${styles.cardFront} flex flex-col justify-evenly bg-[#1c1b42]`}>
-                    <div className='space-y-4'>
-                        <div className='flex gap-2 justify-between'>
-                            <h3 
-                                className={`${styles.cardTitle} text-3xl font-bold`}
-                                style={{ fontFamily: londrinaShadow.style.fontFamily }}
-                            >
-                                {number}
-                            </h3>
-                            <div className={`w-8 bg-white p-2 rounded-full ${styles.icon}`}>
-                                <Image
-                                    src={Arrow}
-                                    alt='documentation'
-                                />
-                            </div>
-                        </div>
-                        <h2 className="text-xl font-bold">{tech}</h2>
-                    </div>
-                    <p className='text-justify'>{description}</p>
-                </div>
-
-                {/* Back Side */}
-                <div className={`${styles.cardBack} flex flex-col justify-center bg-[#dcdcdc]`}>
-                    <div className='flex items-center gap-2 mx-auto'>
-                        <p className='text-2xl font-bold'>Coming Soon</p>
-                        <Lottie 
-                            animationData={Rocket}
-                            loop={true}
-                            autoplay={true}
-                            className='w-12 rotate-45'
-                        />
-                    </div>
-                </div>
+        <div className="flex gap-4">
+          <Button 
+            className="bg-[#1c1b42] rounded-l-full"
+            onClick={() => {
+              handleScrollDocs(-400);
+            }}
+          >
+            <div className="w-12">
+              <Image src={ChevronLeft} alt="backward" />
             </div>
+          </Button>
+          <div ref={containerDocs} className="grid grid-flow-col auto-cols-max gap-4 overflow-x-scroll" style={{scrollBehavior: 'smooth'}}>
+            {HomeContent.home.documentaions.docs.map((documentation, index) => (
+              <DocumentationCaard
+                key={index}
+                number={documentation.number}
+                tech={documentation.tech}
+                description={documentation.description}
+              />
+            ))}
+          </div>
+          <Button 
+            className="bg-[#1c1b42] rounded-r-full"
+            onClick={() => {
+              handleScrollDocs(+400);
+            }}
+          >
+            <div className="w-12">
+              <Image src={ChevronRight} alt="forward" />
+            </div>
+          </Button>
         </div>
     )
 }

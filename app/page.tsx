@@ -7,11 +7,22 @@ import HomeContent from "../constant/content/home.json";
 import Technologies from "@/features/home/components/Technologies";
 import MyDocumentations from "@/features/home/components/MyDocumentations";
 import Contact from "@/features/home/components/Contact";
+import { Button, Image } from "@/components/atoms";
+import { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "@/public/icons";
 
 export default function Home() {
 
+  const containerDocs = useRef<HTMLDivElement | null>(null);
+
+  const handleScrollDocs = (offset: number) => {
+    if(containerDocs.current){
+      containerDocs.current.scrollLeft += offset;
+    }
+  }
+
   return (
-    <div className="w-[95%] max-w-[1024px] mx-auto mt-20 md:mt-[200px] space-y-24 mb-10">
+    <div className="w-[95%] max-w-screen-xl mx-auto mt-20 md:mt-[200px] space-y-24 mb-10">
       {/* Hero */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-4">
         <IntroductionLeft className="order-last sm:order-first" />
@@ -51,17 +62,7 @@ export default function Home() {
       {/* My Documentations */}
       <div className="target-element space-y-8" id="documentations">
         <p className="text-2xl md:text-3xl text-center font-bold">My Documentations</p>
-        <div className="flex overflow-auto gap-4 snap-mandatory snap-x hide-scrollbar">
-          {HomeContent.home.documentaions.docs.map((documentation, index) => (
-            <div key={index} className="snap-center">
-              <MyDocumentations 
-                number={documentation.number}
-                tech={documentation.tech}
-                description={documentation.description}
-              />
-            </div>
-          ))}
-        </div>
+        <MyDocumentations />
       </div>
 
 
