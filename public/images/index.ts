@@ -7,6 +7,7 @@ import Congratulations from "./lotties/Congratulations.json";
 import EmailSent from "./lotties/EmailSent.json";
 import Logo from "./logo.svg";
 import ImageLoading from "./ImageLoading.svg";
+import Clock from "./lotties/Clock.json";
 
 export {
     ImageBlur,
@@ -18,4 +19,5 @@ export {
     EmailSent,
     Logo,
     ImageLoading,
+    Clock,
 }

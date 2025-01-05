@@ -67,7 +67,7 @@ export default function Home() {
 
 
       {/* Contact */}
-      <div id="contact" className="target-element">
+      <div id="contact" className="target-element pb-24">
         <p className="text-2xl md:text-3xl text-center font-bold">Let's Connect</p>
         <Contact />
       </div>

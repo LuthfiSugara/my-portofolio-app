@@ -6,9 +6,9 @@ import globalContent from "../../../constant/content/global.json";
 
 const Index = () => {
     return (
-        <footer className='bg-[#1c1b42] mt-32 px-4 md:px-16'>
+        <footer className='bg-[#1c1b42] px-4 md:px-16'>
             <div className='w-[95%] max-w-[1280px] mx-auto'>
-                <div className='flex flex-col md:flex-row gap-4 justify-between items-center py-20'>
+                <div className='flex flex-col md:flex-row gap-4 justify-between items-center py-10 sm:py-20'>
                     <div className='w-full md:w-[50%]'>
                         <p className='text-2xl font-bold mb-2'>Luthfi Sugara</p>
                         <p className='text-md'>Full stack Software Developer / Frontend Developer / Backend Developer.</p>
@@ -34,7 +34,7 @@ const Index = () => {
                         </div>
                     </div>
                 </div>
-                <div className='border-t-2 border-white mt-4 py-12'>
+                <div className='border-t-2 border-white mt-4 py-4 md:py-12'>
                     <p className='text-white text-center'>© Copyright 2024. Made by Luthfi Sugara</p>
                 </div>
             </div>
