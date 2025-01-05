@@ -21,10 +21,10 @@ interface DocumentationCardProps {
 
 const Index = ({number, tech, description}: DocumentationCardProps) => {
     return (
-        <div className={`${styles.card} relative cursor-pointer w-[400px] h-[250px]`}>
+        <div className={`${styles.card} relative cursor-pointer w-[340px] h-[250px]`}>
             <div className={`${styles.cardInner} relative w-full h-full rounded-lg`}>
                 {/* Front Side */}
-                <div className={`${styles.cardFront} flex flex-col justify-evenly bg-[#1c1b42]`}>
+                <div className={`${styles.cardFront} flex flex-col gap-4 bg-[#1c1b42]`}>
                     <div className='space-y-4'>
                         <div className='flex gap-2 justify-between'>
                             <h3 
