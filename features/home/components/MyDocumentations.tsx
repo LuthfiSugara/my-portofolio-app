@@ -1,20 +1,19 @@
 'use client'
 
-import React, { useRef, useEffect } from 'react'
+import React, { useRef } from 'react'
 import { Button, Image } from '@/components/atoms';
 import { ChevronLeft, ChevronRight } from '@/public/icons';
 import HomeContent from "../../../constant/content/home.json";
 import { DocumentationCaard } from '@/components/templates';
 
 const MyDocumentations = () => {
-
     const containerDocs = useRef<HTMLDivElement | null>(null);
     
-      const handleScrollDocs = (offset: number) => {
-	  if(containerDocs.current){
-              containerDocs.current.scrollLeft += offset;
-          }
-     }
+    const handleScrollDocs = (offset: number) => {
+	    if(containerDocs.current){
+        containerDocs.current.scrollLeft += offset;
+      }
+    }
 
     return (
         <div className="flex gap-4">

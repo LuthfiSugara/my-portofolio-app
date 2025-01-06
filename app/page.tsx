@@ -5,8 +5,7 @@ import IntroductionRight from "@/features/home/components/IntroductionRight";
 import WorkExperience from "@/features/home/components/WorkExperience";
 import HomeContent from "../constant/content/home.json";
 import Technologies from "@/features/home/components/Technologies";
-//import MyDocumentations from "@/features/home/components/MyDocumentations";
-//import Contact from "@/features/home/components/Contact";
+import Contact from "@/features/home/components/Contact";
 import dynamic from "next/dynamic";
 
 const MyDocumentations = dynamic(() => import('../features/home/components/MyDocumentations'), {ssr: false});
@@ -59,10 +58,10 @@ export default function Home() {
 
 
       {/* Contact */}
-      {/*<div id="contact" className="target-element pb-24">
+      <div id="contact" className="target-element pb-24">
         <p className="text-2xl md:text-3xl text-center font-bold">{"Let's Connect"}</p>
         <Contact />
-      </div>*/}
+      </div>
       
     </div>
   )
