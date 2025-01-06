@@ -1,15 +1,15 @@
 "use client"
 
-// import IntroductionLeft from "@/features/home/components/IntroductionLeft";
+import IntroductionLeft from "@/features/home/components/IntroductionLeft";
 import IntroductionRight from "@/features/home/components/IntroductionRight";
 import WorkExperience from "@/features/home/components/WorkExperience";
 import HomeContent from "../constant/content/home.json";
 import Technologies from "@/features/home/components/Technologies";
-import MyDocumentations from "@/features/home/components/MyDocumentations";
-import Contact from "@/features/home/components/Contact";
+//import MyDocumentations from "@/features/home/components/MyDocumentations";
+//import Contact from "@/features/home/components/Contact";
 import dynamic from "next/dynamic";
 
-const IntroductionLeft = dynamic(() => import('../features/home/components/IntroductionLeft'), {ssr: false});
+const MyDocumentations = dynamic(() => import('../features/home/components/MyDocumentations'), {ssr: false});
 
 export default function Home() {
 
@@ -17,8 +17,8 @@ export default function Home() {
     <div className="w-[95%] max-w-screen-xl mx-auto mt-20 md:mt-[200px] space-y-24 mb-10">
       {/* Hero */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-4">
-        <IntroductionLeft className="order-last sm:order-first" />
-        <IntroductionRight className="" />
+      	<IntroductionLeft className="order-last sm:order-first" />
+      	<IntroductionRight className="" />
       </div>
 
       {/* WorkExperience */}
@@ -59,10 +59,10 @@ export default function Home() {
 
 
       {/* Contact */}
-      <div id="contact" className="target-element pb-24">
+      {/*<div id="contact" className="target-element pb-24">
         <p className="text-2xl md:text-3xl text-center font-bold">{"Let's Connect"}</p>
         <Contact />
-      </div>
+      </div>*/}
       
     </div>
   )
