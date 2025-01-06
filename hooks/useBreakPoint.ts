@@ -4,19 +4,21 @@ const useBreakPoint = (ref: RefObject<HTMLElement>): number => {
     const [width, setWidth] = useState<number>(0);
 
     useEffect(() => {
-        const updateWidth = () => {
-            if (ref.current) {
-                setWidth(ref.current.getBoundingClientRect().width);
-            }
-        };
+        if(typeof window !== "undefined"){
+            const updateWidth = () => {
+                if (ref.current) {
+                    setWidth(ref.current.getBoundingClientRect().width);
+                }
+            };
 
-        updateWidth();
+            updateWidth();
 
-        window.addEventListener('resize', updateWidth);
+            window.addEventListener('resize', updateWidth);
 
-        return () => {
-            window.removeEventListener('resize', updateWidth);
-        };
+            return () => {
+                window.removeEventListener('resize', updateWidth);
+            };
+        }
     }, [ref]);
 
     return width;

@@ -66,7 +66,7 @@ const Contact = () => {
         const isFormValid = Object.values(errors).every((error) => error === ' ');
         setLoading(true);
         
-        if (isFormValid && triggerValidate){
+        if (isFormValid && triggerValidate && typeof window !== "undefined"){
             const logoImage = window.location.origin + '/images/Logo.svg';
             const d = new Date();
 
