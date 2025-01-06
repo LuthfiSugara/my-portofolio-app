@@ -1,12 +1,15 @@
 "use client"
 
-import IntroductionLeft from "@/features/home/components/IntroductionLeft";
+// import IntroductionLeft from "@/features/home/components/IntroductionLeft";
 import IntroductionRight from "@/features/home/components/IntroductionRight";
 import WorkExperience from "@/features/home/components/WorkExperience";
 import HomeContent from "../constant/content/home.json";
 import Technologies from "@/features/home/components/Technologies";
 import MyDocumentations from "@/features/home/components/MyDocumentations";
 import Contact from "@/features/home/components/Contact";
+import dynamic from "next/dynamic";
+
+const IntroductionLeft = dynamic(() => import('../features/home/components/IntroductionLeft'));
 
 export default function Home() {
 
