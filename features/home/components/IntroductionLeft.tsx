@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Image } from '@/components/atoms'
+import { Image } from '@/components/atoms'
 import { Dialog } from '@/components/organisms'
 import useBreakPoint from '@/hooks/useBreakPoint'
 import useDisclosure from '@/hooks/useDisclosure'

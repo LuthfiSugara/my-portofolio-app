@@ -9,7 +9,7 @@ import MyDocumentations from "@/features/home/components/MyDocumentations";
 import Contact from "@/features/home/components/Contact";
 import dynamic from "next/dynamic";
 
-const IntroductionLeft = dynamic(() => import('../features/home/components/IntroductionLeft'));
+const IntroductionLeft = dynamic(() => import('../features/home/components/IntroductionLeft'), {ssr: false});
 
 export default function Home() {
 
