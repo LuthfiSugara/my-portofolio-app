@@ -1,4 +1,4 @@
-import Image from "@/components/atoms/Image";
+import Image from "./Image";
 import Button from "./Button";
 import Tooltip from "./Tooltip"
 import Label from "./Label";
