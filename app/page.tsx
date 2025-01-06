@@ -5,7 +5,6 @@ import IntroductionRight from "@/features/home/components/IntroductionRight";
 import WorkExperience from "@/features/home/components/WorkExperience";
 import HomeContent from "../constant/content/home.json";
 import Technologies from "@/features/home/components/Technologies";
-//import Contact from "@/features/home/components/Contact";
 import dynamic from "next/dynamic";
 
 const MyDocumentations = dynamic(() => import('../features/home/components/MyDocumentations'), {ssr: false});
