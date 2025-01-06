@@ -1,4 +1,5 @@
-import { Dialog, Lottie } from '@/components/organisms';
+import { Lottie } from '@/components/molecules';
+import { Dialog } from '@/components/organisms';
 import { EmailSent } from '@/public/images';
 import React from 'react'
 

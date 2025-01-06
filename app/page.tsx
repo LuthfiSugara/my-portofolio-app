@@ -7,19 +7,8 @@ import HomeContent from "../constant/content/home.json";
 import Technologies from "@/features/home/components/Technologies";
 import MyDocumentations from "@/features/home/components/MyDocumentations";
 import Contact from "@/features/home/components/Contact";
-import { Button, Image } from "@/components/atoms";
-import { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "@/public/icons";
 
 export default function Home() {
-
-  const containerDocs = useRef<HTMLDivElement | null>(null);
-
-  const handleScrollDocs = (offset: number) => {
-    if(containerDocs.current){
-      containerDocs.current.scrollLeft += offset;
-    }
-  }
 
   return (
     <div className="w-[95%] max-w-screen-xl mx-auto mt-20 md:mt-[200px] space-y-24 mb-10">
@@ -68,7 +57,7 @@ export default function Home() {
 
       {/* Contact */}
       <div id="contact" className="target-element pb-24">
-        <p className="text-2xl md:text-3xl text-center font-bold">Let's Connect</p>
+        <p className="text-2xl md:text-3xl text-center font-bold">{"Let's Connect"}</p>
         <Contact />
       </div>
       

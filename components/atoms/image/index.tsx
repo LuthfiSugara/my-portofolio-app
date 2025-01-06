@@ -48,5 +48,7 @@ const Index = memo(({className, fallbackSrc, ...props}: CustomImageProps) => {
     )
 });
 
+Index.displayName = "Image";
+
 export default Index
 

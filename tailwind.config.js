@@ -13,6 +13,8 @@ module.exports = {
     'w-xl',
     'w-full',
     'h-full',
+    'invisible',
+    'h-0',
   ],
   theme: {
     extend: {
