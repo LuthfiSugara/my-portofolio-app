@@ -5,7 +5,7 @@ import Frontend from "./Frontend.png";
 import Rocket from "./lotties/Rocket.json";
 import Congratulations from "./lotties/Congratulations.json";
 import EmailSent from "./lotties/EmailSent.json";
-import Logo from "./logo.svg";
+import Logo from "./Logo.svg";
 import ImageLoading from "./ImageLoading.svg";
 import Clock from "./lotties/Clock.json";
 
