@@ -12,6 +12,12 @@ export async function POST(request: NextRequest){
             user: process.env.EMAIL,
             pass: process.env.PASSWORD
         }
+        // host: "sandbox.smtp.mailtrap.io",
+        // port: 2525,
+        // auth: {
+        //     user: "8bbe0943bea0aa",
+        //     pass: "8c4bda40100b9d"
+        // }
     });
 
     const mailOptions: Mail.Options = {

@@ -285,7 +285,7 @@ export const EmailSent = `
                                         <tr>
                                             <td class="logo" style="text-align: start;">
                                                 <a href="#" style="display: flex; gap: 12px; align-items: center;">
-                                                    <img src="{{logo}}" alt="logo" style="width: 45px; height: 35px; background-color: white; border-radius: 100%;" />
+                                                    <img src="https://sugara.online/images/Logo.png" alt="logo" style="width: 45px; height: 35px; background-color: white; border-radius: 100%;" />
                                                     <p style="color: #213555; font-size: 20px; font-weight: 500;">Luthfi Sugara</p>
                                                 </a>
                                             </td>
