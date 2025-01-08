@@ -191,6 +191,12 @@ export const EmailSent = `
                     color: #17bebb;
                 }
 
+                .logo-title {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                }
+
                 .logo h1{
                     margin: 0;
                 }
@@ -283,10 +289,12 @@ export const EmailSent = `
                                 <td valign="top" class="bg_white" style="padding: 1em 0 0 1.5em;">
                                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                         <tr>
-                                            <td class="logo" style="text-align: start;">
-                                                <a href="#" style="display: flex; gap: 12px; align-items: center;">
-                                                    <img src="https://sugara.online/images/Logo.png" alt="logo" style="width: 45px; height: 35px; background-color: white; border-radius: 100%;" />
-                                                    <p style="color: #213555; font-size: 20px; font-weight: 500;">Luthfi Sugara</p>
+                                            <td class="" style="text-align: start;">
+                                                <a href="https://sugara.online/">
+                                                    <div style="display:flex; vertical-align: middle;">
+                                                        <img src="https://sugara.online/images/Logo.png" alt="logo" style="width: 45px; height: 40px; background-color: white; border-radius: 100%;" />
+                                                        <p style="color: #213555; font-size: 20px; margin: 0; margin-top: auto; margin-bottom: auto; font-weight: bold;">Luthfi Sugara</p>
+                                                    </div>
                                                 </a>
                                             </td>
                                         </tr>
