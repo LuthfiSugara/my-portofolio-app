@@ -66,7 +66,7 @@ const Contact = () => {
         const isFormValid = Object.values(errors).every((error) => error === ' ');
         setLoading(true);
         
-        if (isFormValid && triggerValidate && typeof window !== "undefined"){
+        if (isFormValid && triggerValidate){
             const logoImage = window.location.origin + '/images/Logo.svg';
             const d = new Date();
 
@@ -91,6 +91,7 @@ const Contact = () => {
 
             if(sender.status === 'success' && receiver.status === 'success'){
                 setStatus('success');
+                setTriggerValidate(false);
             }else{
                 setStatus('error');
             }
@@ -98,10 +99,7 @@ const Contact = () => {
             onOpen();
         }
         
-        // console.log('message : ', formContact.message.replace(/\r?\n/g, '<br />'));
-
         setLoading(false);
-        setTriggerValidate(false);
     }
 
     const handleResetForm = () => {
@@ -130,7 +128,6 @@ const Contact = () => {
                     value={formContact.email || ''}
                     onChange={(e) => {
                         handleFormInput(e);
-                        
                     }}
                     placeholder="Email"
                     errorMessage={errors.email}
@@ -144,7 +141,6 @@ const Contact = () => {
                     value={formContact.message || ''}
                     onChange={(e) => {
                         handleFormInput(e);
-                        
                     }}
                     placeholder="Message"
                     errorMessage={errors.message}
@@ -175,7 +171,9 @@ const Contact = () => {
                 isOpen={isOpen}
                 name={formContact.email}
                 onClose={() => {
-                    handleResetForm();
+                    if(status === 'success'){
+                        handleResetForm();
+                    }
                     onClose();
                 }}
             />

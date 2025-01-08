@@ -1,6 +1,6 @@
 import { Lottie } from '@/components/molecules';
 import { Dialog } from '@/components/organisms';
-import { EmailSent } from '@/public/images';
+import { EmailFailed, EmailSent } from '@/public/images';
 import React from 'react'
 
 interface ContactDialogProps {
@@ -18,10 +18,10 @@ const ContactDialog = ({status, isOpen, name, onClose}: ContactDialogProps) => {
             size='md'
         >
             <Lottie 
-                animationData={EmailSent}
+                animationData={status === 'success' ? EmailSent : EmailFailed}
                 loop={false}
                 autoplay={true}
-                className='w-32 mx-auto'
+                className='w-36 mx-auto'
             />
             <div className='text-center mb-8 space-y-2'>
                 {status === 'success' ? (

@@ -5,6 +5,7 @@ import Frontend from "./Frontend.png";
 import Rocket from "./lotties/Rocket.json";
 import Congratulations from "./lotties/Congratulations.json";
 import EmailSent from "./lotties/EmailSent.json";
+import EmailFailed from "./lotties/EmailFailed.json";
 import Logo from "./Logo.png";
 import ImageLoading from "./ImageLoading.svg";
 import Clock from "./lotties/Clock.json";
@@ -20,4 +21,5 @@ export {
     Logo,
     ImageLoading,
     Clock,
+    EmailFailed,
 }
