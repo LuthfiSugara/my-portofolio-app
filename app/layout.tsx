@@ -16,11 +16,29 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Luthfi Sugara",
+  title: "Luthfi Sugara | Postofolio",
   description: "Full-Stack Software Developer with 6 years Structuring, Develop and Implementing interactive applications.",
   keywords: ["Portofolio", "Software Developer", "Full Stack Developer", "Frontend Developer", "Backend Developer"],
   openGraph: {
-    images: 'https://sugara.online/images/Logo.png',
+    title: 'Luthfi Sugara',
+    description: 'Full-Stack Software Developer with 6 years Structuring, Develop and Implementing interactive applications.',
+    url: 'https://sugara.online',
+    siteName: 'Luthfi Sugara | Portofolio',
+    images: [
+      {
+        url: 'https://sugara.online/images/Logo.png', // Must be an absolute URL
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://sugara.online/images/Logo.png', // Must be an absolute URL
+        width: 1800,
+        height: 1600,
+        alt: 'My custom alt',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
 };
 
